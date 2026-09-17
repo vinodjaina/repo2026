@@ -1,28 +1,29 @@
-C:\Users\adsadmin\Downloads\CableRoute\react_frontend\cable_frontend>node --version
-v20.20.2
-
-C:\Users\adsadmin\Downloads\CableRoute\react_frontend\cable_frontend>npm ci
-npm warn ERESOLVE overriding peer dependency
-npm warn While resolving: postcss-load-config@6.0.1
-npm warn Found: yaml@undefined
-npm warn node_modules/tailwindcss/node_modules/yaml
-npm warn
-npm warn Could not resolve dependency:
-npm warn peerOptional yaml@"^2.4.2" from postcss-load-config@6.0.1
-npm warn node_modules/tailwindcss/node_modules/postcss-load-config
-npm warn   postcss-load-config@"^4.0.2 || ^5.0 || ^6.0" from tailwindcss@3.4.19
-npm warn   node_modules/tailwindcss
-/^CTerminate batch job (Y/N)? Y
-
-C:\Users\adsadmin\Downloads\CableRoute\react_frontend\cable_frontend>npm ci
-npm warn ERESOLVE overriding peer dependency
-npm warn While resolving: postcss-load-config@6.0.1
-npm warn Found: yaml@undefined
-npm warn node_modules/tailwindcss/node_modules/yaml
-npm warn
-npm warn Could not resolve dependency:
-npm warn peerOptional yaml@"^2.4.2" from postcss-load-config@6.0.1
-npm warn node_modules/tailwindcss/node_modules/postcss-load-config
-npm warn   postcss-load-config@"^4.0.2 || ^5.0 || ^6.0" from tailwindcss@3.4.19
-npm warn   node_modules/tailwindcss
-\
+asgiref==3.11.0
+certifi==2026.1.4
+charset-normalizer==3.4.4
+Django==5.2.10
+django-cors-headers==4.9.0
+djangorestframework==3.16.1
+djangorestframework_simplejwt==5.5.1
+et_xmlfile==2.0.0
+ezdxf==1.4.3
+fonttools==4.61.1
+idna==3.11
+ldap3==2.9.1
+mssql-django==1.6
+numpy==2.4.1
+openpyxl==3.1.5
+pandas==3.0.0
+pillow==12.1.0
+pyasn1==0.6.2
+PyJWT==2.10.1
+pyodbc==5.3.0
+pyparsing==3.3.2
+python-dateutil==2.9.0.post0
+pytz==2025.2
+requests==2.32.5
+six==1.17.0
+sqlparse==0.5.5
+typing_extensions==4.15.0
+tzdata==2025.3
+urllib3==2.6.3
