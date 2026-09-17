@@ -1,153 +1,28 @@
-2026-09-17T07:33:09.9303950Z ##[debug]Evaluating condition for step: 'Python Django Build'
-2026-09-17T07:33:09.9305701Z ##[debug]Evaluating: SucceededNode()
-2026-09-17T07:33:09.9305951Z ##[debug]Evaluating SucceededNode:
-2026-09-17T07:33:09.9306483Z ##[debug]=> True
-2026-09-17T07:33:09.9306752Z ##[debug]Result: True
-2026-09-17T07:33:09.9307148Z ##[section]Starting: Python Django Build
-2026-09-17T07:33:09.9319331Z ==============================================================================
-2026-09-17T07:33:09.9319503Z Task         : PowerShell
-2026-09-17T07:33:09.9319556Z Description  : Run a PowerShell script on Linux, macOS, or Windows
-2026-09-17T07:33:09.9319658Z Version      : 2.247.1
-2026-09-17T07:33:09.9319714Z Author       : Microsoft Corporation
-2026-09-17T07:33:09.9319812Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/powershell
-2026-09-17T07:33:09.9319916Z ==============================================================================
-2026-09-17T07:33:09.9984970Z ##[debug]Resource Utilization warnings is disabled, switch "DISABLE_RESOURCE_UTILIZATION_WARNINGS" variable to "false" if you want to enable it
-2026-09-17T07:33:11.6937464Z ##[debug]VstsTaskSdk 0.21.0 commit 9abb170036d3b4cc1781def2efa436d9b059104c
-2026-09-17T07:33:11.9232405Z ##[debug]Loading module from path 'C:\agents\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.247.1\ps_modules\Sanitizer\Sanitizer.psm1'.
-2026-09-17T07:33:11.9485637Z ##[debug]$OVERRIDING $global:DebugPreference from 'Continue' to 'SilentlyContinue'.
-2026-09-17T07:33:11.9520214Z ##[debug]Loading resource strings from: C:\agents\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.247.1\ps_modules\Sanitizer/module.json
-2026-09-17T07:33:11.9624908Z ##[debug]Loaded 1 strings.
-2026-09-17T07:33:11.9676924Z ##[debug]SYSTEM_CULTURE: 'en-US'
-2026-09-17T07:33:11.9703872Z ##[debug]Loading resource strings from: C:\agents\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.247.1\ps_modules\Sanitizer\Strings\resources.resjson\en-US\resources.resjson
-2026-09-17T07:33:11.9772369Z ##[debug]Loaded 1 strings.
-2026-09-17T07:33:12.0846933Z ##[debug]Feature flag AZP_75787_ENABLE_NEW_LOGIC state: False
-2026-09-17T07:33:12.0919562Z ##[debug]Feature flag AZP_75787_ENABLE_NEW_LOGIC_LOG state: False
-2026-09-17T07:33:12.0968731Z ##[debug]Feature flag AZP_75787_ENABLE_COLLECT state: False
-2026-09-17T07:33:12.0993865Z ##[debug]Exporting function 'Get-SanitizerFeatureFlags'.
-2026-09-17T07:33:12.1017025Z ##[debug]Exporting function 'Get-SanitizerCallStatus'.
-2026-09-17T07:33:12.1038023Z ##[debug]Exporting function 'Get-SanitizerActivateStatus'.
-2026-09-17T07:33:12.1057820Z ##[debug]Exporting function 'Protect-ScriptArguments'.
-2026-09-17T07:33:12.1079435Z ##[debug]Importing function 'Get-SanitizerActivateStatus'.
-2026-09-17T07:33:12.1098505Z ##[debug]Importing function 'Get-SanitizerCallStatus'.
-2026-09-17T07:33:12.1118357Z ##[debug]Importing function 'Get-SanitizerFeatureFlags'.
-2026-09-17T07:33:12.1139013Z ##[debug]Importing function 'Protect-ScriptArguments'.
-2026-09-17T07:33:12.1495739Z ##[debug]Entering C:\agents\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.247.1\powershell.ps1.
-2026-09-17T07:33:12.1648549Z ##[debug]Loading resource strings from: C:\agents\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.247.1\task.json
-2026-09-17T07:33:12.2045078Z ##[debug]Loaded 14 strings.
-2026-09-17T07:33:12.2087391Z ##[debug]SYSTEM_CULTURE: 'en-US'
-2026-09-17T07:33:12.2134377Z ##[debug]Loading resource strings from: C:\agents\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.247.1\Strings\resources.resjson\en-US\resources.resjson
-2026-09-17T07:33:12.2549600Z ##[debug]Loaded 14 strings.
-2026-09-17T07:33:12.2959562Z ##[debug]INPUT_ERRORACTIONPREFERENCE: 'stop'
-2026-09-17T07:33:12.3059332Z ##[debug]INPUT_WARNINGPREFERENCE: 'default'
-2026-09-17T07:33:12.3103087Z ##[debug]INPUT_INFORMATIONPREFERENCE: 'default'
-2026-09-17T07:33:12.3130769Z ##[debug]INPUT_VERBOSEPREFERENCE: 'default'
-2026-09-17T07:33:12.3164678Z ##[debug]INPUT_DEBUGPREFERENCE: 'default'
-2026-09-17T07:33:12.3195625Z ##[debug]INPUT_PROGRESSPREFERENCE: 'silentlyContinue'
-2026-09-17T07:33:12.3225562Z ##[debug]INPUT_SHOWWARNINGS: 'false'
-2026-09-17T07:33:12.3506890Z ##[debug] Converted to bool: False
-2026-09-17T07:33:12.3542175Z ##[debug]INPUT_FAILONSTDERR: 'false'
-2026-09-17T07:33:12.3573530Z ##[debug] Converted to bool: False
-2026-09-17T07:33:12.3614786Z ##[debug]INPUT_IGNORELASTEXITCODE: 'false'
-2026-09-17T07:33:12.3685617Z ##[debug] Converted to bool: False
-2026-09-17T07:33:12.3695990Z ##[debug]INPUT_PWSH: 'false'
-2026-09-17T07:33:12.3736962Z ##[debug] Converted to bool: False
-2026-09-17T07:33:12.3776358Z ##[debug]INPUT_WORKINGDIRECTORY: 'C:\agents\_work\1\s'
-2026-09-17T07:33:12.4037620Z ##[debug]Asserting container path exists: 'C:\agents\_work\1\s'
-2026-09-17T07:33:12.4078029Z ##[debug]INPUT_TARGETTYPE: 'inline'
-2026-09-17T07:33:12.4136763Z ##[debug]INPUT_SCRIPT: 'cd django_backend/backend
-2026-09-17T07:33:12.4156636Z ##[debug]py -3.12 -m pip install -r requirements.txt
-2026-09-17T07:33:12.4171946Z ##[debug]py -3.12 manage.py check'
-2026-09-17T07:33:12.4210827Z ##[debug]INPUT_RUNSCRIPTINSEPARATESCOPE: 'false'
-2026-09-17T07:33:12.4236997Z ##[debug] Converted to bool: False
-2026-09-17T07:33:12.4321526Z Generating script.
-2026-09-17T07:33:12.4575688Z ##[debug]AGENT_VERSION: '4.260.0'
-2026-09-17T07:33:12.4704469Z ##[debug]AGENT_TEMPDIRECTORY: 'C:\agents\_work\_temp'
-2026-09-17T07:33:12.4734067Z ##[debug]Asserting container path exists: 'C:\agents\_work\_temp'
-2026-09-17T07:33:12.5186186Z ##[debug]Asserting leaf path exists: 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
-2026-09-17T07:33:12.5212137Z ========================== Starting Command Output ===========================
-2026-09-17T07:33:12.5461770Z ##[debug]Entering Invoke-VstsTool.
-2026-09-17T07:33:12.5625678Z ##[debug] Arguments: '-NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command ". 'C:\agents\_work\_temp\01c8c8d5-eff7-4a97-9e80-184ec5d0de6d.ps1'"'
-2026-09-17T07:33:12.5656914Z ##[debug] FileName: 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
-2026-09-17T07:33:12.5679720Z ##[debug] WorkingDirectory: 'C:\agents\_work\1\s'
-2026-09-17T07:33:12.5763832Z ##[command]"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command ". 'C:\agents\_work\_temp\01c8c8d5-eff7-4a97-9e80-184ec5d0de6d.ps1'"
-2026-09-17T07:33:19.3039593Z Collecting asgiref==3.11.0 (from -r requirements.txt (line 1))
-2026-09-17T07:33:19.3050219Z   Obtaining dependency information for asgiref==3.11.0 from https://files.pythonhosted.org/packages/91/be/317c2c55b8bbec407257d45f5c8d1b6867abc76d12043f2d3d58c538a4ea/asgiref-3.11.0-py3-none-any.whl.metadata
-2026-09-17T07:33:19.8733687Z   Downloading asgiref-3.11.0-py3-none-any.whl.metadata (9.3 kB)
-2026-09-17T07:33:20.0740844Z Collecting certifi==2026.1.4 (from -r requirements.txt (line 2))
-2026-09-17T07:33:20.0748866Z   Obtaining dependency information for certifi==2026.1.4 from https://files.pythonhosted.org/packages/e6/ad/3cc14f097111b4de0040c83a525973216457bbeeb63739ef1ed275c1c021/certifi-2026.1.4-py3-none-any.whl.metadata
-2026-09-17T07:33:20.0872415Z   Downloading certifi-2026.1.4-py3-none-any.whl.metadata (2.5 kB)
-2026-09-17T07:33:20.5017410Z Collecting charset-normalizer==3.4.4 (from -r requirements.txt (line 3))
-2026-09-17T07:33:20.5021423Z   Obtaining dependency information for charset-normalizer==3.4.4 from https://files.pythonhosted.org/packages/3d/2d/1e5ed9dd3b3803994c155cd9aacb60c82c331bad84daf75bcb9c91b3295e/charset_normalizer-3.4.4-cp312-cp312-win_amd64.whl.metadata
-2026-09-17T07:33:20.5134430Z   Downloading charset_normalizer-3.4.4-cp312-cp312-win_amd64.whl.metadata (38 kB)
-2026-09-17T07:33:20.8799029Z Collecting Django==5.2.10 (from -r requirements.txt (line 4))
-2026-09-17T07:33:20.8803010Z   Obtaining dependency information for Django==5.2.10 from https://files.pythonhosted.org/packages/fa/de/f1a7cd896daec85832136ab509d9b2a6daed4939dbe26313af3e95fc5f5e/django-5.2.10-py3-none-any.whl.metadata
-2026-09-17T07:33:20.9069421Z   Downloading django-5.2.10-py3-none-any.whl.metadata (4.1 kB)
-2026-09-17T07:33:21.0610098Z Collecting django-cors-headers==4.9.0 (from -r requirements.txt (line 5))
-2026-09-17T07:33:21.0614817Z   Obtaining dependency information for django-cors-headers==4.9.0 from https://files.pythonhosted.org/packages/30/d8/19ed1e47badf477d17fb177c1c19b5a21da0fd2d9f093f23be3fb86c5fab/django_cors_headers-4.9.0-py3-none-any.whl.metadata
-2026-09-17T07:33:21.0726022Z   Downloading django_cors_headers-4.9.0-py3-none-any.whl.metadata (16 kB)
-2026-09-17T07:33:21.2553165Z Collecting djangorestframework==3.16.1 (from -r requirements.txt (line 6))
-2026-09-17T07:33:21.2556940Z   Obtaining dependency information for djangorestframework==3.16.1 from https://files.pythonhosted.org/packages/b0/ce/bf8b9d3f415be4ac5588545b5fcdbbb841977db1c1d923f7568eeabe1689/djangorestframework-3.16.1-py3-none-any.whl.metadata
-2026-09-17T07:33:21.2683776Z   Downloading djangorestframework-3.16.1-py3-none-any.whl.metadata (11 kB)
-2026-09-17T07:33:21.4591411Z Collecting djangorestframework_simplejwt==5.5.1 (from -r requirements.txt (line 7))
-2026-09-17T07:33:21.4600094Z   Obtaining dependency information for djangorestframework_simplejwt==5.5.1 from https://files.pythonhosted.org/packages/60/94/fdfb7b2f0b16cd3ed4d4171c55c1c07a2d1e3b106c5978c8ad0c15b4a48b/djangorestframework_simplejwt-5.5.1-py3-none-any.whl.metadata
-2026-09-17T07:33:21.4710989Z   Downloading djangorestframework_simplejwt-5.5.1-py3-none-any.whl.metadata (4.6 kB)
-2026-09-17T07:33:21.5751736Z Collecting et_xmlfile==2.0.0 (from -r requirements.txt (line 8))
-2026-09-17T07:33:21.5757131Z   Obtaining dependency information for et_xmlfile==2.0.0 from https://files.pythonhosted.org/packages/c1/8b/5fe2cc11fee489817272089c4203e679c63b570a5aaeb18d852ae3cbba6a/et_xmlfile-2.0.0-py3-none-any.whl.metadata
-2026-09-17T07:33:21.5890058Z   Downloading et_xmlfile-2.0.0-py3-none-any.whl.metadata (2.7 kB)
-2026-09-17T07:33:22.0751143Z Collecting ezdxf==1.4.3 (from -r requirements.txt (line 9))
-2026-09-17T07:33:22.0756135Z   Obtaining dependency information for ezdxf==1.4.3 from https://files.pythonhosted.org/packages/73/0e/cac3816a2f00ca604d699408167de8460bb15f808dc162995ea81d39c3c5/ezdxf-1.4.3-cp312-cp312-win_amd64.whl.metadata
-2026-09-17T07:33:22.2871615Z   Downloading ezdxf-1.4.3-cp312-cp312-win_amd64.whl.metadata (10 kB)
-2026-09-17T07:33:22.7930151Z Collecting fonttools==4.61.1 (from -r requirements.txt (line 10))
-2026-09-17T07:33:22.7933963Z   Obtaining dependency information for fonttools==4.61.1 
+C:\Users\adsadmin\Downloads\CableRoute\react_frontend\cable_frontend>node --version
+v20.20.2
 
-1123Z     self.fetch_command(subcommand).run_from_argv(self.argv)
-2026-09-17T07:38:05.9871509Z   File "C:\Program Files\Python312\Lib\site-packages\django\core\management\base.py", line 412, in run_from_argv
-2026-09-17T07:38:05.9877212Z     parser = self.create_parser(argv[0], argv[1])
-2026-09-17T07:38:05.9878298Z              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-09-17T07:38:05.9878699Z   File "C:\Program Files\Python312\Lib\site-packages\django\core\management\base.py", line 375, in create_parser
-2026-09-17T07:38:05.9882033Z     self.add_arguments(parser)
-2026-09-17T07:38:05.9882449Z   File "C:\Program Files\Python312\Lib\site-packages\django\core\management\commands\check.py", line 47, in add_arguments
-2026-09-17T07:38:05.9885533Z     choices=tuple(connections),
-2026-09-17T07:38:05.9885825Z             ^^^^^^^^^^^^^^^^^^
-2026-09-17T07:38:05.9886883Z   File "C:\Program Files\Python312\Lib\site-packages\django\utils\connection.py", line 73, in __iter__
-2026-09-17T07:38:05.9889637Z     return iter(self.settings)
-2026-09-17T07:38:05.9889942Z                 ^^^^^^^^^^^^^
-2026-09-17T07:38:05.9890267Z   File "C:\Program Files\Python312\Lib\site-packages\django\utils\functional.py", line 47, in __get__
-2026-09-17T07:38:05.9893244Z     res = instance.__dict__[self.name] = self.func(instance)
-2026-09-17T07:38:05.9893691Z                                          ^^^^^^^^^^^^^^^^^^^
-2026-09-17T07:38:05.9894014Z   File "C:\Program Files\Python312\Lib\site-packages\django\utils\connection.py", line 45, in settings
-2026-09-17T07:38:05.9897090Z     self._settings = self.configure_settings(self._settings)
-2026-09-17T07:38:05.9897728Z                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-09-17T07:38:05.9898278Z   File "C:\Program Files\Python312\Lib\site-packages\django\db\utils.py", line 148, in configure_settings
-2026-09-17T07:38:05.9901535Z     databases = super().configure_settings(databases)
-2026-09-17T07:38:05.9902214Z                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-09-17T07:38:05.9902429Z   File "C:\Program Files\Python312\Lib\site-packages\django\utils\connection.py", line 50, in configure_settings
-2026-09-17T07:38:05.9905336Z     settings = getattr(django_settings, self.settings_name)
-2026-09-17T07:38:05.9905673Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-09-17T07:38:05.9906306Z   File "C:\Program Files\Python312\Lib\site-packages\django\conf\__init__.py", line 81, in __getattr__
-2026-09-17T07:38:05.9909713Z     self._setup(name)
-2026-09-17T07:38:05.9910302Z   File "C:\Program Files\Python312\Lib\site-packages\django\conf\__init__.py", line 68, in _setup
-2026-09-17T07:38:05.9913219Z     self._wrapped = Settings(settings_module)
-2026-09-17T07:38:05.9913539Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-09-17T07:38:05.9913983Z   File "C:\Program Files\Python312\Lib\site-packages\django\conf\__init__.py", line 166, in __init__
-2026-09-17T07:38:05.9918186Z     mod = importlib.import_module(self.SETTINGS_MODULE)
-2026-09-17T07:38:05.9918596Z           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-09-17T07:38:05.9918929Z   File "C:\Program Files\Python312\Lib\importlib\__init__.py", line 90, in import_module
-2026-09-17T07:38:05.9992643Z     return _bootstrap._gcd_import(name[level:], package, level)
-2026-09-17T07:38:05.9993555Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-2026-09-17T07:38:05.9993717Z   File "<frozen importlib._bootstrap>", line 1381, in _gcd_import
-2026-09-17T07:38:05.9993948Z   File "<frozen importlib._bootstrap>", line 1354, in _find_and_load
-2026-09-17T07:38:05.9994162Z   File "<frozen importlib._bootstrap>", line 1325, in _find_and_load_unlocked
-2026-09-17T07:38:05.9994402Z   File "<frozen importlib._bootstrap>", line 929, in _load_unlocked
-2026-09-17T07:38:05.9995343Z   File "<frozen importlib._bootstrap_external>", line 994, in exec_module
-2026-09-17T07:38:05.9995712Z   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-2026-09-17T07:38:05.9996002Z   File "C:\agents\_work\1\s\django_backend\backend\backend\settings.py", line 14, in <module>
-2026-09-17T07:38:05.9999924Z     import environ, os
-2026-09-17T07:38:06.0000649Z ModuleNotFoundError: No module named 'environ'
-2026-09-17T07:38:06.2760754Z ##[debug]$LASTEXITCODE: 1
-2026-09-17T07:38:06.3781267Z ##[debug]Exit code: 1
-2026-09-17T07:38:06.3840455Z ##[debug]Leaving Invoke-VstsTool.
-2026-09-17T07:38:06.4335279Z ##[error]PowerShell exited with code '1'.
-2026-09-17T07:38:06.4336645Z ##[debug]Processed: ##vso[task.logissue type=error;source=TaskInternal]PowerShell exited with code '1'.
-2026-09-17T07:38:06.4592584Z ##[debug]Processed: ##vso[task.complete result=Failed]Error detected
-2026-09-17T07:38:06.4623907Z ##[debug]Leaving C:\agents\_work\_tasks\PowerShell_e213ff0f-5d5c-4791-802d-52ea3e7be1f1\2.247.1\powershell.ps1.
+C:\Users\adsadmin\Downloads\CableRoute\react_frontend\cable_frontend>npm ci
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: postcss-load-config@6.0.1
+npm warn Found: yaml@undefined
+npm warn node_modules/tailwindcss/node_modules/yaml
+npm warn
+npm warn Could not resolve dependency:
+npm warn peerOptional yaml@"^2.4.2" from postcss-load-config@6.0.1
+npm warn node_modules/tailwindcss/node_modules/postcss-load-config
+npm warn   postcss-load-config@"^4.0.2 || ^5.0 || ^6.0" from tailwindcss@3.4.19
+npm warn   node_modules/tailwindcss
+/^CTerminate batch job (Y/N)? Y
+
+C:\Users\adsadmin\Downloads\CableRoute\react_frontend\cable_frontend>npm ci
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: postcss-load-config@6.0.1
+npm warn Found: yaml@undefined
+npm warn node_modules/tailwindcss/node_modules/yaml
+npm warn
+npm warn Could not resolve dependency:
+npm warn peerOptional yaml@"^2.4.2" from postcss-load-config@6.0.1
+npm warn node_modules/tailwindcss/node_modules/postcss-load-config
+npm warn   postcss-load-config@"^4.0.2 || ^5.0 || ^6.0" from tailwindcss@3.4.19
+npm warn   node_modules/tailwindcss
+\
