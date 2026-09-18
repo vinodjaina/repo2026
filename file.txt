@@ -137,6 +137,56 @@ steps:
 - task: PublishPipelineArtifact@1
   displayName: 'Publish CableRoute Pipeline Artifact'
   inputs:
+
+
+
+trigger:
+- cicdtests
+
+pool:
+  name: DesignCollectionPool
+  demands:
+  - Agent.Name -equals DCPA1
+
+steps:
+
+# 1. Django backend: install dependencies and validate
+- powershell: |
+    py -3.12 -m pip install -r requirements.txt
+    py -3.12 manage.py check
+  workingDirectory: $(Build.SourcesDirectory)/django_backend/backend
+  displayName: 'Django: install and validate'
+
+# 2. React frontend: install dependencies and build
+- powershell: |
+    npm ci
+    npm run build
+  workingDirectory: $(Build.SourcesDirectory)/react_frontend/cable_frontend
+  displayName: 'React: install and build'
+
+# 3. Stage backend files
+- task: CopyFiles@2
+  displayName: 'Stage backend'
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/django_backend/backend'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/CableRoute/Backend'
+
+# 4. Stage frontend build output
+- task: CopyFiles@2
+  displayName: 'Stage frontend'
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/react_frontend/cable_frontend/build'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/CableRoute/Frontend'
+
+# 5. Publish the artifact
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish CableRoute artifact'
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)/CableRoute'
+    artifact: 'CableRoute'
+    publishLocation: 'pipeline'
     targetPath: '$(Build.ArtifactStagingDirectory)\CableRoute'
     artifact: 'CableRoute'
     publishLocation: 'pipeline'
