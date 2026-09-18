@@ -27,3 +27,116 @@ sqlparse==0.5.5
 typing_extensions==4.15.0
 tzdata==2025.3
 urllib3==2.6.3
+
+
+
+
+
+trigger:
+- cicdtests
+
+pool:
+  name: DesignCollectionPool
+  demands:
+  - Agent.Name -equals DCPA1
+
+steps:
+
+# ============================================================
+# 1. Verify build tools
+# ============================================================
+- powershell: |
+    Write-Host "=== Build Tool Versions ==="
+    py -3.12 --version
+    node --version
+    npm --version
+  displayName: 'Verify Python, Node.js and npm'
+
+# ============================================================
+# 2. Build and validate Django Backend
+# ============================================================
+- powershell: |
+    Set-Location "$(Build.SourcesDirectory)\django_backend\backend"
+
+    Write-Host "=== Installing Python dependencies ==="
+    py -3.12 -m pip install -r requirements.txt
+
+    Write-Host "=== Django Application Validation ==="
+    py -3.12 manage.py check
+  displayName: 'Build and Validate Django Backend'
+
+# ============================================================
+# 3. Install React dependencies
+# ============================================================
+- powershell: |
+    Set-Location "$(Build.SourcesDirectory)\react_frontend\cable_frontend"
+
+    Write-Host "=== Node.js Version ==="
+    node --version
+
+    Write-Host "=== npm Version ==="
+    npm --version
+
+    Write-Host "=== Installing React dependencies ==="
+    npm ci
+  displayName: 'Install React Dependencies'
+
+# ============================================================
+# 4. Build React Frontend
+# ============================================================
+- powershell: |
+    Set-Location "$(Build.SourcesDirectory)\react_frontend\cable_frontend"
+
+    Write-Host "=== Building React Frontend ==="
+    npm run build
+  displayName: 'Build React Frontend'
+
+# ============================================================
+# 5. Prepare Pipeline Artifact
+# ============================================================
+- powershell: |
+    $artifactPath = "$(Build.ArtifactStagingDirectory)\CableRoute"
+
+    Write-Host "=== Preparing artifact directory ==="
+
+    if (Test-Path $artifactPath) {
+        Remove-Item $artifactPath -Recurse -Force
+    }
+
+    New-Item -ItemType Directory -Path $artifactPath -Force | Out-Null
+
+    # Backend
+    New-Item -ItemType Directory `
+        -Path "$artifactPath\Backend" `
+        -Force | Out-Null
+
+    Copy-Item `
+        "$(Build.SourcesDirectory)\django_backend\backend\*" `
+        "$artifactPath\Backend" `
+        -Recurse `
+        -Force
+
+    # Frontend
+    New-Item -ItemType Directory `
+        -Path "$artifactPath\Frontend" `
+        -Force | Out-Null
+
+    Copy-Item `
+        "$(Build.SourcesDirectory)\react_frontend\cable_frontend\build\*" `
+        "$artifactPath\Frontend" `
+        -Recurse `
+        -Force
+
+    Write-Host "=== Artifact contents ==="
+    Get-ChildItem $artifactPath -Recurse | Select-Object FullName
+  displayName: 'Prepare CableRoute Artifact'
+
+# ============================================================
+# 6. Publish Pipeline Artifact
+# ============================================================
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish CableRoute Pipeline Artifact'
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)\CableRoute'
+    artifact: 'CableRoute'
+    publishLocation: 'pipeline'
